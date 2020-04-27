@@ -1,0 +1,26 @@
+<!-- Borrowed from http://getbootstrap.com/examples/starter-template/ -->
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 0px 15px;
+  text-align: center;
+}
+
+.results_words_key, .results_words_value, 
+	.results_phrase_key, .results_phrase_value,
+	.results_num_possible_key, .results_num_possible_value,
+	.dice_word
+	{
+	font-size: x-large;
+}
+
+.btn.dice_button {
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+
+.dice_num {
+	margin-top: 0px;
+}
+
