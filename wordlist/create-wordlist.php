@@ -291,7 +291,7 @@ function main($argv) {
 	//
 	$js = getJsArray($words, $params);
 
-	print $js;
+	print esc_html($js);
 
 } // End of main()
 
