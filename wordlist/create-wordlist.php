@@ -19,17 +19,34 @@ if (php_sapi_name() != "cli") {
 */
 function printSyntax($progname) {
 
-	print "Syntax: $progname [ --dice n | --eff ]\n\n"
+	$cmd =  "Syntax: $progname [ --dice n | --eff ]\n\n"
 		. "\t--dice  Number of dice to generate a wordlist for.  Must be between 5 and 7 inclusive. Defaults to 5.\n"
 		. "\t--eff Generate wordlist against the EFF's list, found at https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases"
 		. "\n"
 		;
 
+	print esc_html($cmd);
 	exit(1);
 
 } // End of printSyntax()
-
-
+function esc_html($text) 
+{
+	        $safe_text = wp_check_invalid_utf8( $text );
+        	$safe_text = _wp_specialchars( $safe_text, ENT_QUOTES );
+	        /**
+	         * Filters a string cleaned and escaped for output in HTML.
+	         *
+	         * Text passed to esc_html() is stripped of invalid or special characters
+	         * before output.
+	         *
+	         * @since 2.8.0
+	         *
+	         * @param string $safe_text The text after it has been escaped.
+	         * @param string $text      The text prior to being escaped.
+	         */
+	        return apply_filters( 'esc_html', $safe_text, $text );
+	
+}
 /**
 * Parse our arguments.
 *
